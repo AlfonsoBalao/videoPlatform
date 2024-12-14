@@ -54,7 +54,7 @@ class CategoryController extends Controller
         //
     }
 
-    /**
+    /**jjjj
      * Remove the specified resource from storage.
      */
     public function destroy(string $id)

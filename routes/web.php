@@ -2,7 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DashboardController;
-
+use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\LessonController;
+use App\Http\Controllers\RoleController;    
 
 //Non-authenticated routes
 Route::get('/', [DashboardController::class, 'index']);
@@ -13,4 +15,7 @@ Route::middleware([
     'verified',
 ])->group(function () { //Authenticated routes
     Route::get('/dashboard', [DashboardController::class, 'dashboard'])->name('dashboard');
+    Route::resource('/categories', CategoryController::class);
+    Route::resource('/lessons', LessonController::class);
+    Route::resource('/roes', RoleController::class);
 });

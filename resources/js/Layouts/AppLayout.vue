@@ -150,7 +150,7 @@ const logout = () => {
 
                                         <!-- Authentication -->
                                         <form @submit.prevent="logout">
-                                            <DropdownLink as="button">
+                                            <DropdownLink as="button">`
                                                 Log Out
                                             </DropdownLink>
                                         </form>
