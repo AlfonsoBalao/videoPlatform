@@ -6,9 +6,13 @@ import ApplicationLogo from '@/Components/ApplicationLogo.vue';
    <div>
         <div class="p-6 sm:px-20 bg-white border-b border-gray-200">
             <div>
-                HELLO WORLD
-                {{ $page.props }}
+               
+          <h1>Hello Worldito</h1>
+
+
             </div>
         </div>
     </div>
 </template>
+
+

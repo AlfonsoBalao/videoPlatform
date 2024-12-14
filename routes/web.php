@@ -17,5 +17,5 @@ Route::middleware([
     Route::get('/dashboard', [DashboardController::class, 'dashboard'])->name('dashboard');
     Route::resource('/categories', CategoryController::class);
     Route::resource('/lessons', LessonController::class);
-    Route::resource('/roes', RoleController::class);
+    Route::resource('/roles', RoleController::class);
 });
