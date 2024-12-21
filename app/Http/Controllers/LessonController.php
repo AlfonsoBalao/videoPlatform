@@ -4,10 +4,13 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Lesson;
-use Illuminate\Http\Response;
+use App\Models\Category;
+use App\Models\Level;
 
 class LessonController extends Controller
 {
+
+    const NUMBER_OF_ITEMS_PER_PAGE = 25;
     /**
      * Display a listing of the resource.
      * 
@@ -15,16 +18,19 @@ class LessonController extends Controller
      */
     public function index()
     {
-        $lessons = Lesson::paginate(25);
+        $lessons = Lesson::paginate(self::NUMBER_OF_ITEMS_PER_PAGE);
         return inertia('Lessons/Index', ['lessons' => $lessons]);
     }
 
     /**
      * Show the form for creating a new resource.
+     * @return \Illuminate\Http\Response
      */
     public function create()
     {
-        //
+        $categories = Category::all();
+        $levels = Level::all();
+        return inertia('Lessons/Create', ['categories' => $categories, 'levels' => $levels]);
     }
 
     /**
