@@ -27,7 +27,7 @@
 </script>
 
 <template>
-    <AppLayout title = "Create category">
+    <AppLayout title = "Create lesson">
         <template #header>
             <h1 class="font-semibold text-xl text-gray-800 leading-tight" v-if = "$page.props.user.permissions.includes('create lessons')">Create lesson></h1>
         </template>

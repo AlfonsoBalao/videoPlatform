@@ -11,7 +11,7 @@ export default {
     import PrimaryButton from '@/Components/PrimaryButton.vue'
     import TextInput from '@/Components/TextInput.vue'
     import SecondaryButton from '@/Components/SecondaryButton.vue'
-    import Checkbox from '@/Components/Checkbox.vue'
+    import CollectionSelector from '@/Components/Common/CollectionSelector.vue'
 
     defineProps({
         form: {
@@ -59,6 +59,8 @@ defineEmits(['submit'])
                 />
                 <InputError :message="$page.props.errors.name" class="mt-2"/>
 
+                <br />
+                <InputLabel for="descripcion" value="Description" />
                 <TextInput
                     id="description"
                     v-model="form.description"
@@ -68,6 +70,8 @@ defineEmits(['submit'])
                 />
                 <InputError :message="$page.props.errors.description" class="mt-2"/>
 
+                <br />
+                <InputLabel for="content_uri" value="Content URI" />
                 <TextInput
                     id="content_uri"
                     v-model="form.content_uri"
@@ -77,14 +81,21 @@ defineEmits(['submit'])
                 />
                 <InputError :message="$page.props.errors.content_uri" class="mt-2"/>
 
+                <br />
+                <InputLabel value="PDF URI" />
                 <SecondaryButton class="mt-2 me-2" type="button">Upload PDF</SecondaryButton>
                 <InputError :message="$page.props.errors.pdf_uri" class="mt-2"/>
-                <select>
+
+                <br />
+                <InputLabel for="level_id" value="Level" />
+                <select name = "level_id" id="level_id">
                 <option v-for="level in levels" :value="level.id">{{ level.name }}</option>
                 </select>
                 <InputError :message="$page.props.errors.level_id" class="mt-2"/>
 
-
+                <br />
+                <InputLabel for="categories" value="Categories" />
+                <CollectionSelector name="categories" id="categories" :collection = "categories"> </CollectionSelector>
             </div>
         </template>
 
